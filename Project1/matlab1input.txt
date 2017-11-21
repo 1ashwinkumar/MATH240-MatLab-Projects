@@ -1,0 +1,45 @@
+%Ashwin Kumar - section 0141
+%Partner: Mike Demissie - section 0121
+ 
+ 
+%Problem 1
+ 
+A = [06 02 19 96; 23 11 19 60; 04 10 19 61; 30 01 20 09;];
+B = ones(4,4);
+O = zeros(4,4);
+I = eye(4,4);
+ 
+%Problem 2
+ 
+a = A(2,4);
+ac = A(:,4);
+ar = A(2,:);
+%*B=B*a is true since scalar multiplication is a commutative property
+%ac*I=I*ac is false because the columns of the left matrix must equal the rows of the right matrix
+ 
+%Problem 3
+A = randi([-12,12],3,5);
+rref(A);
+%The columns of A are not linearly independent because there are 2 free variables
+%The span is all possible sums of all possible multiples of columns 4 and 5
+ 
+%Problem 4
+ 
+S = [1 0 0 0 0 0 0; 1 2 4 8 16 32 2.90; 1 4 16 64 256 1024 14.8; 1 6 36 216 1296 7776 39.6; 1 8 64 512 4096 32768 74.3; 1 10 100 1000 10000 100000 119;];
+rref(S);
+%p(t) = 1.7125t - 1.1948(t^2) + .6615(t^3) - .0701(t^4) + .0026(t^5)
+ 
+coefM = [.0026 -.0701 .6615 -1.1948 1.7125 0];
+polyval(coefM, 7.50);
+ 
+S = [1 0 0 0 0; 1 2 4 8 2.90; 1 4 16 64 14.8; 1 6 36 216 39.6; 1 8 64 512 74.3; 1 10 100 1000 119;];
+rref(S);
+%The equation cannot be solved if the degree of polynomial is less than 5
+ 
+%Problem 5
+ 
+D = [1.26 0.19 0.8 0.18 0.8; 36 51 13 80 33; 52 34 74 0 45; 0 7 1.1 3.4 3;];
+%The variables represent the amounts of each of the 4 ingredients to be put in the diet mixture
+rref(D);
+%non fat milk = .6414 g, soy flour = .5441 g, whey = |-.0926| = .0926 g, soy protein = |-.2079| = .2079 g
+
